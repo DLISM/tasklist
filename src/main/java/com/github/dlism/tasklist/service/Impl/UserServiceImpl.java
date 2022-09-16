@@ -12,9 +12,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getByUsername(Long id) {
+    public User getByUsername(String username) {
         return null;
     }
+
 
     @Override
     public User update(User user) {
