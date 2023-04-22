@@ -1,5 +1,7 @@
 package com.github.dlism.tasklist.config;
 
+import com.github.dlism.tasklist.web.security.JwtTokenFilter;
+import com.github.dlism.tasklist.web.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class ApplicationConfig {
+    private final JwtTokenProvider tokenProvider;
     private final ApplicationContext applicationContext;
 
     @Bean
@@ -56,7 +59,7 @@ public class ApplicationConfig {
                 .anyRequest().authenticated()
                 .and()
                 .anonymous().disable()
-                .addFilterBefore(new JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtTokenFilter(tokenProvider), UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
 }

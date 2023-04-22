@@ -9,3 +9,9 @@ spring:
     init:
       mode: always
       continue-on-error: false
+
+security:
+  jwt:
+    secret: ZnV0bmpoZXBicGJyYnR2Zm4zMTE=
+    access: 3600000
+    refresh: 25920000

@@ -1,5 +1,8 @@
 package com.github.dlism.tasklist.web.dto.auth;
 
+import lombok.Data;
+
+@Data
 public class JwtResponse {
     private Long id;
     private String username;
