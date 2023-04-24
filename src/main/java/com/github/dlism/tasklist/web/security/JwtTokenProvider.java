@@ -75,7 +75,7 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    public JwtResponse refreshSureTokens(String refreshToken){
+    public JwtResponse refreshUserTokens(String refreshToken){
         JwtResponse jwtResponse = new JwtResponse();
 
         if(!validateToken(refreshToken)){
