@@ -3,12 +3,15 @@ package com.github.dlism.tasklist.repository.Impl;
 import com.github.dlism.tasklist.model.user.Role;
 import com.github.dlism.tasklist.model.user.User;
 import com.github.dlism.tasklist.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
+@RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
+
     @Override
     public Optional<User> findById(Long id) {
         return Optional.empty();
