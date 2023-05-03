@@ -1,4 +1,4 @@
-package com.github.dlism.tasklist.web.mappers;
+package com.github.dlism.tasklist.repository.mapper;
 
 import com.github.dlism.tasklist.model.task.Status;
 import com.github.dlism.tasklist.model.task.Task;

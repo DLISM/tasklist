@@ -4,7 +4,7 @@ import com.github.dlism.tasklist.model.exception.ResourceMappingException;
 import com.github.dlism.tasklist.model.task.Task;
 import com.github.dlism.tasklist.repository.DataSourceConfig;
 import com.github.dlism.tasklist.repository.TaskRepository;
-import com.github.dlism.tasklist.web.mappers.TaskRowMapper;
+import com.github.dlism.tasklist.repository.mapper.TaskRowMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
