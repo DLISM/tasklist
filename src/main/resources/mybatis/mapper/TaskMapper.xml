@@ -8,7 +8,7 @@
         <id property="id" column="task_id"/>
         <result property="title" column="task_title"/>
         <result property="description" column="task_description"/>
-        <result property="expiration_date" column="task_expiration_date"/>
+        <result property="expirationDate" column="task_expiration_date"/>
         <result property="status" column="task_status"/>
     </resultMap>
     

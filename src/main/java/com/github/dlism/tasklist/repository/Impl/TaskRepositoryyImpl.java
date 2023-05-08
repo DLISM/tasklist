@@ -12,7 +12,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+//@Repository
 @RequiredArgsConstructor
 public class TaskRepositoryyImpl implements TaskRepository {
     private final DataSourceConfig dataSource;

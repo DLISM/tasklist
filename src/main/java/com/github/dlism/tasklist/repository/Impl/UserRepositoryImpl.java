@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Optional;
 
-@Repository
+//@Repository
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
