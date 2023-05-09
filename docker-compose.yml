@@ -1,5 +1,18 @@
 version: "3.0"
 services:
+  app:
+    build:
+      context: .
+    container_name: "taskList"
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/tasklist
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - '8080:8080'
+
   postgres:
     image: postgres:14-alpine
     container_name: "tasklist_db"
