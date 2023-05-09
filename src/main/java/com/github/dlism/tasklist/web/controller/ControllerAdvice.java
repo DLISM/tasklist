@@ -6,6 +6,7 @@ import com.github.dlism.tasklist.model.exception.ResourceMappingException;
 import com.github.dlism.tasklist.model.exception.ResourceNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -70,6 +71,11 @@ public class ControllerAdvice {
         return exceptionBody;
     }
 
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ExceptionBody handleAuthentication(AuthenticationException e){
+        return new ExceptionBody("Authentication failed");
+    }
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ExceptionBody handleException(Exception e){
