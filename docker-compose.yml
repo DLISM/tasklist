@@ -1,4 +1,11 @@
 version: "3.0"
+
+volumes:
+  cache:
+    driver: local
+  db-data:
+    driver: local
+
 services:
   app:
     build:
@@ -22,5 +29,16 @@ services:
       POSTGRES_PASSWORD: "postgres"
     volumes:
       - .:/var/data
+      - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  redis:
+    image: redis:7.2-rc-alpine
+    restart: always
+    container_name: "redis"
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass Z2pkZmtnampnamtnZ2tkZmdqa2xk
+    volumes:
+      - cache:/data

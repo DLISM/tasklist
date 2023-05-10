@@ -3,11 +3,12 @@ package com.github.dlism.tasklist.model.user;
 import com.github.dlism.tasklist.model.task.Task;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
 @Data
-public class User {
+public class User implements Serializable {
     private Long id;
     private String name;
     private String username;
